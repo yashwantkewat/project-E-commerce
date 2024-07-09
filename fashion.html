@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion website</title>
     <link rel="stylesheet" href="./fashion.css">
     <script src="https://kit.fontawesome.com/88aef20d4d.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" -->
+        <!-- integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+    <script src="script.js" async></script>
+
 </head>
+
 <body>
-    
+
     <section class=" top-txt ">
         <div class="head container ">
             <div class="head-txt ">
                 <p style="font-size: 20px;">welcome to our website </p>
             </div>
             <div class="sing_in_up ">
-                <a href="# ">SIGN IN</a>
-                <a href="# ">SIGN UP</a>
+                <a href="#" id="signInLink">SIGN IN</a>
+                <a href="#" id="signUpLink">SIGN UP</a>
             </div>
         </div>
     </section>
+
+    <div id="signInForm" class="form1 hidden">
+        <h2>Sign In</h2>
+        <form id="signInFormElement">
+            <input type="text" id="usernameSignIn" placeholder="Username" required><br>
+            <input type="current-password" id="passwordSignIn" placeholder="Password" required><br>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <div id="signUpForm" class="form1 hidden">
+        <h2>Sign Up</h2>
+        <form id="signUpFormElement">
+            <input type="text" id="usernameSignUp" placeholder="Username" required><br>
+            <input type="email" id="emailSignUp" placeholder="Email" required><br>
+            <input type="current-password" id="passwordSignUp" placeholder="Password" required><br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
 
     <nav class="navbar">
         <div class="navbar-container">
@@ -34,6 +60,8 @@
                 <li><a href="#sellers">Shop</a></li>
                 <li><a href="#news">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#shopping-cart" style="color: mediumblue;"> <i style="margin-right: 1%;"
+                            class="fa-solid fa-cart-shopping justify-content-end fa-xl"></i></a></li>
             </ul>
             <div class="logo">
                 <img src="https://i.postimg.cc/TP6JjSTt/logo.webp" alt="">
@@ -44,10 +72,10 @@
     <section id="home">
         <div class="home_page ">
             <div class="home_img ">
-                <img src="/index.HTMl/image/magnificent-woman-long-bright-skirt-dancing-studio-carefree-inspired-female-model-posing-with-pleasure-yellow.jpg" alt="img ">
+                <img src="/index.HTMl/image/magnificent-woman-long-bright-skirt-dancing-studio-carefree-inspired-female-model-posing-with-pleasure-yellow.jpg"
+                    alt="img ">
             </div>
             <div class="home_txt ">
-                <!-- <p class="collectio ">SUMMER COLLECTION</p> -->
                 <div id="word"></div>
                 <h2>SUMMER collection<br>Collection 2024</h2>
                 <div class="home_label ">
@@ -55,20 +83,16 @@
                         to exceptional quality.</p>
                 </div>
                 <button class="BTN"><a href="#sellers">SHOP NOW</a><i class='bx bx-right-arrow-alt'></i></button>
-                <div class="home_social_icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-pinterest'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                </div>
             </div>
         </div>
+
+
     </section>
 
     <section id="collection">
         <div class="collections container">
             <div class="content">
-                <img src="/index.HTMl/image/mainshrt.jpg" alt="img" />
+                <img src="/index.HTMl/image/mainshrt.jpg" alt="img">
                 <div class="img-content">
                     <p>Clothing Collections</p>
                     <button><a href="#sellers">SHOP NOW</a></button>
@@ -95,577 +119,434 @@
     <section id="sellers">
         <div class="seller container">
             <h2>Top Sales</h2>
-            <div class="best-seller">
-                <div class="best-p1">
-                    <img src="/index.HTMl/image/blue.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;37.24
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle blue'></i>
-                                <i class='bx bxs-circle white'></i>
+            <div class="best-seller ">
+                <div class="best-p1 ">
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/blue.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title shop-item-title">indian shoe</h5>
+                                <p class="card-text shop-item-price"> Rs 6990.00</p>
+                                <button type="button" style="width: 100%; padding: 10px;border-radius: 5px ;" 
+                                    class=" btn btn1 btn-warning mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping"
+                                        style="margin-right: 4%;"></i>Add
+                                    To Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="">Buy Now</a></button>
-                        </div>
-                        <!-- <div class="add-cart">
-                            <button>Add To Cart</button>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="best-p1">
-                    <img src="/index.HTMl/image/manjackets.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Jacket</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;17.24
-                            <div class="colors">
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle brown'></i>
-                            </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
 
+                <!-- </div> -->
 
+                <!-- //////image-2///// -->
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/manshirt.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;27.24
-                            <div class="colors">
-                                <i class='bx bxs-circle brown'></i>
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/manjackets.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title shop-item-title">ps indian jacket </h5>
+                                <p class="card-text shop-item-price"> Rs 4999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn  btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
                         </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
+                    </div>
+
+                </div>
+
+                <!-- //////image-3///// -->
+
+                <div class="best-p1">
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/manshirt.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian men shirt </h5>
+                                <p class="card-text shop-item-price"> Rs 3999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- //////image-4///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/newshoe1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;43.67
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/newshoe1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 1999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- more item add  -->
-        <div class="seller container">
-            <!-- <h2>Top Sales</h2> -->
+
+            <!-- //////image-5///// -->
+
+            <!-- more item add  -->
             <div class="best-seller">
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoe.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;36.24
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle blue'></i>
-                                <i class='bx bxs-circle white'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoe.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 3999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="">Buy Now</a></button>
-                        </div>
-                        <!-- <div class="add-cart">
-                            <button>Add To Cart</button>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="best-p1">
-                    <img src="/index.HTMl/image/jackets.jpeg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Jacket</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;37.24
-                            <div class="colors">
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle brown'></i>
-                            </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
 
 
+                <!-- //////image-6///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shirt.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;37.24
-                            <div class="colors">
-                                <i class='bx bxs-circle brown'></i>
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/jackets.jpeg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian jackets
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 6999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- //////image-7///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoeimaze.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;47.67
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shirt.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shirt
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
                         </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
+                    </div>
+                </div>
+
+                <!-- //////image-8///// -->
+
+                <div class="best-p1">
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoeimaze.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- </div> -->
 
-        <!-- more item add  -->
-        <div class="seller container">
-            <!-- <h2>Top Sales</h2> -->
+            <!-- //////image-9///// -->
+
+            <!-- more item add  -->
             <div class="best-seller">
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoe3.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;34.24
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle blue'></i>
-                                <i class='bx bxs-circle white'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoe3.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
                         </div>
-                        <div class="buy-now">
-                            <button><a href="">Buy Now</a></button>
-                        </div>
-                        <!-- <div class="add-cart">
-                            <button>Add To Cart</button>
-                        </div> -->
                     </div>
                 </div>
+
+
+                <!-- //////image-10///// -->
 
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/jackets1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Jacket</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;27.24
-                            <div class="colors">
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle brown'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/jackets1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian jacket
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
 
+                <!-- //////image-11///// -->
 
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shirt1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;25.24
-                            <div class="colors">
-                                <i class='bx bxs-circle brown'></i>
-                                <i class='bx bxs-circle green'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shirt1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shirt
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/new-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- //////image-12///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoe1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;23.67
-                            <div class="colors">
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoe1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </div>
 
-        <!-- more item add  -->
 
-        <div class="seller container">
+            <!-- //////image-13///// -->
+
+            <!-- more item add  -->
+
             <h2>New Arrivals</h2>
             <div class="best-seller">
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/mantshirt1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian T-Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;10.23
-                            <div class="colors">
-                                <i class='bx bxs-circle blank'></i>
-                                <i class='bx bxs-circle blue'></i>
-                                <i class='bx bxs-circle brown'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/mantshirt1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian t-shirt
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- //////image-14///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/bag.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Bag</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;09.28
-                            <div class="colors">
-                                <i class='bx bxs-circle brown'></i>
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle green'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/bag.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian bag
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- //////image-15///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/goggles1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Sunglass</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;06.24
-                            <div class="colors">
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle blank'></i>
-                                <i class='bx bxs-circle blank'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/goggles1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian goggles
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- //////image-16///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoegallery1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;43.67
-                            <div class="colors">
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoegallery1.jpg"
+                                class="card-img-top shop-item-image" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="seller container">
+
+
+            <!-- //////image-17///// -->
+
             <h2>Hot Sales</h2>
             <div class="best-seller">
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/shoegallery2.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Shoes</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;37.24
-                            <div class="colors">
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle black'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/shoegallery2.jpg"
+                                class="card-img-top shop-item-image" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shoe
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+                <!-- //////image-18///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/alex-haigh-fEt6Wd4t4j0-unsplash.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian T-Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;10.23
-                            <div class="colors">
-                                <i class='bx bxs-circle blank'></i>
-                                <i class='bx bxs-circle blue'></i>
-                                <i class='bx bxs-circle brown'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/alex-haigh-fEt6Wd4t4j0-unsplash.jpg"
+                                class="card-img-top shop-item-image" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian alex
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- //////image-19///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/masaaki-komori-9ugEeqflo70-unsplash.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS indian T-Shirt</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;15.24
-                            <div class="colors">
-                                <i class='bx bxs-circle blank'></i>
-                                <i class='bx bxs-circle red'></i>
-                                <i class='bx bxs-circle blue'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/masaaki-komori-9ugEeqflo70-unsplash.jpg"
+                                class="card-img-top shop-item-image" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian shirt
+                                </h5>
+                                <p class="card-text shop-item-price"> Rs 5999.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- //////image-20///// -->
+
                 <div class="best-p1">
-                    <img src="/index.HTMl/image/bag1.jpg" alt="img">
-                    <div class="best-p1-txt">
-                        <div class="name-of-p">
-                            <p>PS Indian Bag</p>
-                        </div>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                        </div>
-                        <div class="price">
-                            &dollar;09.28
-                            <div class="colors">
-                                <i class='bx bxs-circle blank'></i>
-                                <i class='bx bxs-circle grey'></i>
-                                <i class='bx bxs-circle brown'></i>
+                    <div class=" col filter-item all new">
+                        <div class="card h-100">
+                            <img src="/index.HTMl/image/bag1.jpg" class="card-img-top shop-item-image"
+                                alt="img">
+
+                            <div class="card-body">
+                                <h5 class="card-title shop-item-title">ps indian bag</h5>
+                                <p class="card-text shop-item-price"> Rs 5990.00</p>
+                                <button type="button" style="width: 100%;"
+                                    class="btn btn1 btn-warning mt-auto shop-item-button"><i
+                                        class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To
+                                    Cart</button>
                             </div>
-                        </div>
-                        <div class="buy-now">
-                            <button><a href="https://example.com/another-link">Buy Now</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
     </section>
 
 
@@ -719,12 +600,6 @@
 
     <section id="contact">
         <div class="contact container">
-            <div class="map">
-                <!-- <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.386729734229!2d75.85774521439897!3d22.719568235012716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397e649c2b248b15%3A0x4d76cb5e3f5c252f!2sIndore%2C%20Madhya%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1654257749399!5m2!1sen!2sin"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-            </div>
             <form action="https://formspree.io/f/xzbowpjq" method="POST">
                 <div class="form">
                     <div class="form-txt">
@@ -762,8 +637,8 @@
                 <span class="icon"><i class="fa-brands fa-google"></i></span>
                 <span class="icon"><i class="fa-brands fa-instagram"></i></span>
                 <span class="icon"><i class="fa-brands fa-amazon"></i><span>
-               
-             
+
+
             </div>
             <div class="content_2">
                 <h4>SHOPPING</h4>
@@ -783,22 +658,61 @@
                 <h4>NEWLETTER</h4>
                 <p>Be the first to know about new<br>arrivals, look books, sales & promos!</p>
                 <div class="f-mail">
-                    <input type="email" id="emailInput"  placeholder="Your Email" style="background-color: rgb(93, 80, 54);">
+                    <input type="email" id="emailInput" placeholder="Your Email"
+                        style="background-color: rgb(93, 80, 54);">
                 </div>
-                <input type="submit" id="submitButton"  placeholder="submit" value="submit" class="BTN">
+                <input type="submit" id="submitButton" placeholder="submit" value="submit" class="BTN2">
                 <!-- <hr> -->
             </div>
         </div>
         <div class="f-design">
             <div class="f-design-txt container">
-                <p>Developed by yashwant Kewat</p>
-                <p> all <i class="fa-solid fa-copyright"></i> copywright reserved  </p>
+                <p>Developed by Yashwant Kewat</p>
+                <p><i class="fa-solid fa-copyright"></i> copywright reserved 2024 </p>
             </div>
         </div>
     </footer>
 
-   
+
+
+    <!--Shopping Cart-->
+    <section class="container content-section" id="shopping-cart">
+
+        <h3 style="text-decoration: underline;text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
+
+        <table class="table table-hover table-cart">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody class="cart-items">
+
+
+            </tbody>
+        </table>
+
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price" style="text-align: right;">$0</span>
+        </div>
+
+
+        <div class="btn-purchase" style="margin-top: 10%;">
+            <button type="button" class="btn btn-dark btn-purchase "><i class="fa-solid fa-cart-shopping "
+                    style="margin-right: 6%;"></i>PURCHASE</button>
+        </div>
+
+        
+    </section>
+
+
+
+
 
     <script src="./fashion.js"></script>
 </body>
+
 </html>
